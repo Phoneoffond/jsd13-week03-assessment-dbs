@@ -16,5 +16,9 @@
 -- involved, and what SQL concepts you plan to use.
 -- Write in English or Thai. Do not skip this step.
 --
--- Your thinking:
---
+-- Your thinking: เลือกการแสดงผลชื่อสินค้าคือ name และราคาคือ price ด้วย SELECT โดยดึงมาจากฐานข้อมูลที่มีชื่อว่า MenuItems
+-- แล้วใส่เงื่อนไข WHERE สำหรับหมดหมู่หรือcategory ที่เป็น 'Side' หรือเครื่องเคียง
+
+SELECT name, price
+FROM MenuItems
+WHERE category = 'Side'
