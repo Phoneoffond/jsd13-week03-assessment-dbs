@@ -16,5 +16,11 @@
 // are involved, and what MongoDB concepts you plan to use.
 // Write in English or Thai. Do not skip this step.
 //
-// Your thinking:
-//
+// Your thinking: หาของเต็มสต็อคสินค้า ถ้ามีของตั้งแต่ 100 หรือมากกว่าไม่ต้องซื้อเพิ่ม โดยเข้าไปในฐานข้อมูล ingredients แล้วเช็ค stock_level
+// ว่ามากกว่าหรือเท่ากับ 100 หรือไม่
+
+use("chrome-burger-db");
+
+db.ingredients.find( {"stock_level": {$gte: 100.00}}, 
+    {"_id": false, "name": true, "stock_level": true},
+);

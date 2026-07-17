@@ -16,5 +16,8 @@
 -- involved, and what SQL concepts you plan to use.
 -- Write in English or Thai. Do not skip this step.
 --
--- Your thinking:
---
+-- Your thinking: เช็คสต็อคจ่ากฐานข้อมูล ingredients ด้วย FROM แล้วเลือกแสดงข้อมูลปริมาณสต๊อคและชื่อสินค้า
+-- โดยมีเงื่อนไขว่าต้องมีจำนวนมากกว่าหรือเท่ากับ 100
+SELECT name, stock_level
+FROM ingredients
+WHERE stock_level >= 100.00
