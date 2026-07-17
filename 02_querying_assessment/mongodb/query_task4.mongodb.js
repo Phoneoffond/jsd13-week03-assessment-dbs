@@ -17,5 +17,23 @@
 // are involved, and what MongoDB concepts you plan to use.
 // Write in English or Thai. Do not skip this step.
 //
-// Your thinking:
-//
+// Your thinking: ใช้ aggregate รวมรายได้ (price)ทั้งหมดในฐานข่้อมูล orders เอามารวมกันในตัวเลขชุดเดียว
+// จากนั้นเลือกการแสดงผลเฉพาะ total_revenue
+
+use("chrome-burger-db");
+
+db.orders.aggregate([
+{ $group : {
+    _id: null,
+    total_revenue: {$sum: "$total_price"}
+  }
+},
+{
+    $project: {
+    _id: 0,
+    total_revenue: true
+    }
+
+},
+
+])
