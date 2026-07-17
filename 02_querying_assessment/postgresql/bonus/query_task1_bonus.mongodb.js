@@ -16,5 +16,11 @@
 // are involved, and what MongoDB concepts you plan to use.
 // Write in English or Thai. Do not skip this step.
 //
-// Your thinking:
-//
+// Your thinking: ดึง side หรือเครื่องเคียงมาจากฐานข่้อมูล menu_items ภายใต้หมวดหมู้ category ที่ตรงกัน
+// จากนั้นไม่ให้แสดงผล _id แต่ให้แสดงผลชื่อ name และราคา price
+use("chrome-burger-db");
+
+db.menu_items.find( 
+    {"category" : "Side"},
+    {_id: false, name: true, price: true}
+);
