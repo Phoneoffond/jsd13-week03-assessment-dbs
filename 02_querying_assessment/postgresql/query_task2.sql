@@ -16,5 +16,8 @@
 -- involved, and what SQL concepts you plan to use.
 -- Write in English or Thai. Do not skip this step.
 --
--- Your thinking:
+-- Your thinking: ให้หาชื่อนามสกุลพ่อครัวหรือ "Cook" เพื่อติดต่อเรื่องเปลี่ยนเวลางาน ต้องไปเรียกข้อมูลมาจาก staff แล้วคัดมาเฉพาะที่เป็น Cooks
 --
+SELECT first_name, last_name
+FROM Staff
+WHERE Role = 'Cook'
