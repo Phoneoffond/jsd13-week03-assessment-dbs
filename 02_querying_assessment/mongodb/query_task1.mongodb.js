@@ -17,4 +17,8 @@
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+// ตอนแรกให้ดึงข้อมูลมาจากฐานข้อมูลที่มีชื่อว่า chrome-burger-db จากนั้นให้เข้าไปหาราคาในคอลแลคชั่น menu_items โดยใช้ find() แล้วใช้เงื่อนไข คือ ราคา หรือ price ต้องน้อยกว่า 10.00 หรือ $lt ใน {}
+
+use("chrome-burger-db");
+
+db.menu_items.find({price: {$lt: 10.00} });
