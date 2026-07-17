@@ -16,5 +16,11 @@
 // are involved, and what MongoDB concepts you plan to use.
 // Write in English or Thai. Do not skip this step.
 //
-// Your thinking:
+// Your thinking: ให้หาชื่อนามสกุลพ่อครัวหรือ "Cook" เพื่อติดต่อเรื่องเปลี่ยนเวลางาน ต้องไปเรียกข้อมูลมาจาก staff แล้วคัดมาเฉพาะที่เป็น Cooks
 //
+use("chrome-burger-db");
+
+db.staff.find( 
+    {"role" : "Cook"},
+    {_id: false, first_name: true, last_name: true}
+);
