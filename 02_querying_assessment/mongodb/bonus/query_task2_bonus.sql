@@ -17,5 +17,11 @@
 -- involved, and what SQL concepts you plan to use.
 -- Write in English or Thai. Do not skip this step.
 --
--- Your thinking:
---
+-- Your thinking: เข้าไปอ่านฐานข้อมูลใน staff เห็น staff_id ของ ๋Jane Doe คือ 1
+-- จากนั้นเข้าไปในฐานข้อมูล oders พบว่าใช้เลข staff_id คือ 1 ตรงกัน ใน WHERE
+-- เลยสร้าเงื่อนไขว่า ให้เปิดข้อมูลเฉพาะ staff_id = 1 เท่านั้น และเลือกเปิดเฉพาะ order_date และ total_price ด้วย SELECT
+-- โดยข้อมูบทั้งหมดจะดึงมาจากไฟล์ orders ด้วย FROM
+
+SELECT order_date, total_price 
+FROM orders
+WHERE staff_id = 1
