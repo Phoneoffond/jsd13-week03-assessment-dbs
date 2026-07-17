@@ -16,5 +16,8 @@
 -- involved, and what SQL concepts you plan to use.
 -- Write in English or Thai. Do not skip this step.
 --
--- Your thinking:
---
+-- Your thinking: ดึงข้อมมูล total_price มาจากฐานข่้อมูล orders แล้วใช้ SUM เพื่อรวมตัวเลขทั้งหมด 
+-- แล้วประกาศค่าเป็น total_revenue ด้วย AS โดยเงื่อนไขใน WHERE คือราคาต้องมากกว่า 0
+SELECT SUM(total_price) AS total_revenue
+FROM orders
+WHERE total_price > 0.00
