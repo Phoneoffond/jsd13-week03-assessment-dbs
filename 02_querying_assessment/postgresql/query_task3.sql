@@ -18,5 +18,14 @@
 -- involved, and what SQL concepts you plan to use.
 -- Write in English or Thai. Do not skip this step.
 --
--- Your thinking:
---
+-- Your thinking: ให้นับจำนวนออเดอร์ที่ cashiers ทำยอดได้ทั้งหมดของเดือนนี้ โดยดึงชื่อนามสกุล และจำนวนออเดอร์สะสมเรียงลำดับจากมากไปน้อย
+-- ต้องไปกรองชื่อกับนามกุลและรหัสของคนที่เป็น Cashier มาจากฐานข้อมูล Staff ก่อน แล้วค่อยรหัสมานับออเดอร์ ใครมากสุดอยู่ข้างบน
+
+SELECT
+    staff.first_name,
+    staff.last_name,
+    COUNT(orders.order_id) AS order_count
+FROM staff 
+JOIN orders ON staff.staff_id = orders.staff_id 
+GROUP BY staff.staff_id
+ORDER BY order_count DESC;
