@@ -16,5 +16,8 @@
 -- involved, and what SQL concepts you plan to use.
 -- Write in English or Thai. Do not skip this step.
 --
--- Your thinking:
---
+-- Your thinking: ตอนแรกต้องเชื่อมฐานข้อมูลผ่าน PostgreSQL แล้วเรียกข้อมูลที่จะแสดงผลแต่ละแถว เพื่อดูชื่อและราคา ด้วย SELECT
+-- จากนั้นใช้ FROM ดึงข้อมูลออกมาจากตาราง MenuItems  โดยมีเงื่อนไขว่าราคาต้องน้อยกว่า 10 ซึ่งต้องใช้ WHERE ในการกำหนดเงื่อนไข
+SELECT name, price 
+FROM MenuItems 
+WHERE price < 10;
