@@ -16,5 +16,10 @@
 -- involved, and what SQL concepts you plan to use.
 -- Write in English or Thai. Do not skip this step.
 --
--- Your thinking:
---
+-- Your thinking: ผู้จัดการรู้ว่า Freshest Farm Produce จะส่งสินค้าช้า เลยอยากดูว่าร้าน Freshest Farm Produce ขายอะไรบ้าง จะได้เตรียามไปซื้อที่อื่น
+-- เราจึงต้องเลือก ชื่อสินค้ามาแสดงผลจากฐานข้อมูล Ingredients และ Suppliers ซึ่งมี supplier_id ตรงกัน โดยเลือกเฉพาะรายการสินค้าที่ซื้อจากร้าน Freshest Farm Produce
+
+SELECT Ingredients.name
+FROM Ingredients
+INNER JOIN Suppliers ON Ingredients.supplier_id = Suppliers.supplier_id
+WHERE Suppliers.name = 'Freshest Farm Produce';

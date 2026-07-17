@@ -18,5 +18,12 @@
 // are involved, and what MongoDB concepts you plan to use.
 // Write in English or Thai. Do not skip this step.
 //
-// Your thinking:
+// Your thinking: ให้นับจำนวนออเดอร์ที่ cashiers ทำยอดได้ทั้งหมดของเดือนนี้ โดยดึงชื่อนามสกุล และจำนวนออเดอร์สะสมเรียงลำดับจากมากไปน้อย
+// ต้องไปกรองชื่อกับนามกุลและรหัสของคนที่เป็น Cashier มาจากฐานข้อมูล Staff ก่อน แล้วค่อยรหัสมานับออเดอร์ ใครมากสุดอยู่ข้างบน 
 //
+use("chrome-burger-db");
+
+db.staff.find( 
+    {{"role" : "cashier"} => {order_id.count()}},
+    {_id: false, first_name: true, last_name: true}
+);
